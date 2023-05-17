@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'reausable.dart';
+import 'containercontent.dart';
 
 const activecolor= Color(0xFF0A0D22);
 
@@ -22,24 +24,7 @@ class _InputPageState extends State<InputPage> {
               children: [
                 reusableWidget(
                   color: activecolor,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.mars,
-                        size: 70,
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Text("Male",style: TextStyle(
-                        fontSize: 15,
-                        fontWeight: FontWeight.bold,
-                        color: Color(0xFF868892),
-                      ),
-                      ),
-                    ],
-                  ),
+                  child: containercontent(iconData: FontAwesomeIcons.mars,label: "Man"),
                 ),
                 reusableWidget(color: activecolor),
               ],
@@ -64,19 +49,3 @@ class _InputPageState extends State<InputPage> {
   }
 }
 
-class reusableWidget extends StatelessWidget {
- reusableWidget({required this.color, this.child});
-final Color color;
-final Widget? child;
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-        child: Container(
-          margin: EdgeInsets.all(15),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: color,
-          ),
-    ));
-  }
-}
