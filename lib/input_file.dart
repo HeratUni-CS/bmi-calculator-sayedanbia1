@@ -26,7 +26,10 @@ class _InputPageState extends State<InputPage> {
                   color: activecolor,
                   child: containercontent(iconData: FontAwesomeIcons.mars,label: "Man"),
                 ),
-                reusableWidget(color: activecolor),
+                reusableWidget(
+                  color: activecolor,
+                  child: containercontent(iconData: FontAwesomeIcons.venus,label: "Female"),
+                ),
               ],
             )),
             reusableWidget(color: activecolor),
