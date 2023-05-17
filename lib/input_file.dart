@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 const activecolor= Color(0xFF0A0D22);
 
@@ -19,7 +20,27 @@ class _InputPageState extends State<InputPage> {
             Expanded(
                 child: Row(
               children: [
-                reusableWidget(color: activecolor,),
+                reusableWidget(
+                  color: activecolor,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(
+                        FontAwesomeIcons.mars,
+                        size: 70,
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text("Male",style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Color(0xFF868892),
+                      ),
+                      ),
+                    ],
+                  ),
+                ),
                 reusableWidget(color: activecolor),
               ],
             )),
