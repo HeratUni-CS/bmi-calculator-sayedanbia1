@@ -2,10 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reausable.dart';
 import 'containercontent.dart';
-
-const bottomcontainercolor= Color(0xFFEB1555);
-const activecolor= Color(0xFF0A0D22);
-const inactivecolor=Color(0xFF1D1F33);
+import 'constants.dart';
 
 enum gender{
   male,
@@ -36,7 +33,7 @@ class _InputPageState extends State<InputPage> {
                       sg=gender.male;
                     });
                   },
-                      color: (sg == gender.male) ? activecolor :inactivecolor,
+                      color: (sg == gender.male) ? KActivecolor :KInactivecolor,
                       child: containercontent(iconData: FontAwesomeIcons.mars,
                       label: "Man"
                   ),
@@ -47,18 +44,27 @@ class _InputPageState extends State<InputPage> {
                       sg=gender.female;
                     });
                   },
-                      color: (sg == gender.female)? activecolor :inactivecolor,
+                      color: (sg == gender.female)? KActivecolor :KInactivecolor,
                       child: containercontent(iconData: FontAwesomeIcons.venus,
                       label: "Female"),
                 ),
               ],
             )),
-            reusableWidget(color: activecolor),
+            reusableWidget(
+
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("Height",style: KLabelstyle,),
+                ],
+              ),
+                color: KActivecolor
+            ),
             Expanded(
                 child: Row(
               children: [
-                reusableWidget(color: activecolor),
-                reusableWidget(color: activecolor),
+                reusableWidget(color: KActivecolor),
+                reusableWidget(color: KActivecolor),
               ],
             ),
             ),

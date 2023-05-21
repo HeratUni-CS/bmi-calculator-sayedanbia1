@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
+
 
 class containercontent extends StatelessWidget {
 
@@ -18,11 +20,8 @@ class containercontent extends StatelessWidget {
         SizedBox(
           height: 15,
         ),
-        Text(label,style: TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.bold,
-          color: Color(0xFF868892),
-        ),
+        Text(
+          label,style: KLabelstyle,
         ),
       ],
     );
