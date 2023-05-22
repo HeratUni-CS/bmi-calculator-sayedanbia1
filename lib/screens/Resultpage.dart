@@ -1,9 +1,14 @@
+import 'package:bmi_starting/components/bottombutton.dart';
 import 'package:flutter/material.dart';
-import 'reausable.dart';
-import 'constants.dart';
+import '../components/reausable.dart';
+import '../constants.dart';
 
 class ResultPage extends StatelessWidget {
+    String result;
+    String bmi;
+    String interpretation;
 
+    ResultPage({required this.result, required this.bmi, required this.interpretation});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,14 +32,18 @@ class ResultPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text("NORMAL",style: KResualtTextStyle),
-                    Text("25",style: KBMITextStyle,),
-                    Text("You are good to go ",textAlign: TextAlign.center,style: KBodyTextStyle
+                    Text(result,style: KResualtTextStyle),
+                    Text(bmi,style: KBMITextStyle,),
+                    Text(interpretation,textAlign: TextAlign.center,style: KBodyTextStyle
                       ,),
                   ],
               ),
 
-          ),),
+          ),
+          ),
+          bottombutton(onpressed: (){
+            Navigator.pop(context);
+          }, label: "RECALL CALCULATE",),
         ],
       ),
     );

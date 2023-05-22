@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'constants.dart';
+import '../constants.dart';
 
 class bottombutton extends StatelessWidget {
   void Function() onpressed;

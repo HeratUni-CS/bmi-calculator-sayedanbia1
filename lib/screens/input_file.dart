@@ -1,11 +1,12 @@
+import 'package:bmi_starting/bmi_brain.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'reausable.dart';
-import 'containercontent.dart';
-import 'constants.dart';
+import '../components/reausable.dart';
+import '../components/containercontent.dart';
+import '../constants.dart';
 import 'Resultpage.dart';
-import 'bottombutton.dart';
-import 'Roundiconbutton.dart';
+import '../components/bottombutton.dart';
+import '../components/Roundiconbutton.dart';
 
 enum gender{
   male,
@@ -162,11 +163,16 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
             ),
-            bottombutton(onpressed:  (){
+            bottombutton(onpressed:(){
+              BMIBRAIN bmi=BMIBRAIN(height: height, weight: weight)
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context){
-                  return ResultPage();
+                  return ResultPage(
+                      result: bmi.getresult(),
+                      bmi: bmi.getBmi(),
+                      interpretation: bmi.getinterpretation()
+                  );
                 },),
               );
             },
