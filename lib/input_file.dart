@@ -3,6 +3,9 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reausable.dart';
 import 'containercontent.dart';
 import 'constants.dart';
+import 'Resultpage.dart';
+import 'bottombutton.dart';
+import 'Roundiconbutton.dart';
 
 enum gender{
   male,
@@ -159,31 +162,23 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
             ),
-            Container(
-              height: 80,
-              color: Color(0xFFEB1555),
-              margin: EdgeInsets.only(top: 10),
-            ),
+            bottombutton(onpressed:  (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context){
+                  return ResultPage();
+                },),
+              );
+            },
+            label: "CALCULATE BMI",),
           ],
         ),
     );
   }
 }
-class RoundIconButton extends StatelessWidget {
-  final IconData icondata;
- final void Function() onpressed;
 
-  RoundIconButton({required this.icondata,required this.onpressed});
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      onPressed: onpressed ,
-      fillColor: const Color(0xFF1C1F32),
-      shape: const CircleBorder(),
-      constraints: const BoxConstraints.tightFor(height:56.0,width:56.0),
-      child: Icon(icondata,size: 30,),
-    );
 
-  }
-}
+
+
+
 
