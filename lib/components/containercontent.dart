@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 
-class containercontent extends StatelessWidget {
+class IconContent extends StatelessWidget {
 
   final IconData iconData;
   final String label;
 
-  containercontent({ required this.iconData, required this.label});
+  IconContent({ required this.iconData, required this.label});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,7 +18,7 @@ class containercontent extends StatelessWidget {
           size: 70,
         ),
         SizedBox(
-          height: 15,
+          height:15,
         ),
         Text(
           label,style: KLabelstyle,

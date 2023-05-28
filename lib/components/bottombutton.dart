@@ -14,10 +14,12 @@ class bottombutton extends StatelessWidget {
       child: Container(
         width: double.infinity,
         height: 80,
-        color: Color(0xFFEB1555),
+        color: Color(0x89A0F5EE),
         margin: EdgeInsets.only(top: 10),
         child: Center(
-          child: Text(label ,style: KLargeButtonStyle,),
+          child: Text(
+            label
+            ,style: KLargeButtonStyle,),
 
         ),
       ),

@@ -26,6 +26,6 @@ const KBodyTextStyle=TextStyle(
 );
 const KLargeButtonStyle = TextStyle(fontWeight: FontWeight.bold,fontSize: 20);
 const KStylenumber=TextStyle(fontSize: 50);
-const KBottomcontainercolor= Color(0xFFEB1555);
-const KActivecolor= Color(0xFF0A0D22);
-const KInactivecolor=Color(0xFF1D1F33);
+const KBottomcontainercolor= Color(0xDFFFFFF);
+const KActivecolor= Color(0xBEC2C5D5);
+const KInactivecolor=Color(0x8FFFFFF);

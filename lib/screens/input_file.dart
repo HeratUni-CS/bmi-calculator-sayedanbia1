@@ -8,11 +8,10 @@ import 'Resultpage.dart';
 import '../components/bottombutton.dart';
 import '../components/Roundiconbutton.dart';
 
-enum gender{
+enum gender {
   male,
   female,
 }
-
 class InputPage extends StatefulWidget {
   @override
   State<InputPage> createState() => _InputPageState();
@@ -26,7 +25,7 @@ class _InputPageState extends State<InputPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('BMI CALCULATOR'),
+          title: Center(child: Text('BMI CALCULATOR')),
         ),
         body: Column(
           children: [
@@ -40,8 +39,8 @@ class _InputPageState extends State<InputPage> {
                     });
                   },
                       color: (sg == gender.male) ? KActivecolor :KInactivecolor,
-                      child: containercontent(iconData: FontAwesomeIcons.mars,
-                      label: "Man"
+                      child: IconContent(iconData: FontAwesomeIcons.mars,
+                      label: "Man",
                   ),
                 ),
                 reusableWidget(
@@ -51,7 +50,7 @@ class _InputPageState extends State<InputPage> {
                     });
                   },
                       color: (sg == gender.female)? KActivecolor :KInactivecolor,
-                      child: containercontent(iconData: FontAwesomeIcons.venus,
+                      child: IconContent(iconData: FontAwesomeIcons.venus,
                       label: "Female"),
                 ),
               ],
@@ -105,6 +104,7 @@ class _InputPageState extends State<InputPage> {
                 reusableWidget(
                     color: KActivecolor,
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text("weight",style: KLabelstyle,
                         ),
@@ -134,6 +134,7 @@ class _InputPageState extends State<InputPage> {
                 reusableWidget(
                     color: KActivecolor,
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                 Text("age",style: KLabelstyle,
                 ),
@@ -163,17 +164,18 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
             ),
-            bottombutton(onpressed:(){
-              BMIBRAIN bmi=BMIBRAIN(height: height, weight: weight)
+              bottombutton(onpressed:(){
+              BMIBRAIN bmi= BMIBRAIN(height: height, weight: weight);
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context){
                   return ResultPage(
                       result: bmi.getresult(),
                       bmi: bmi.getBmi(),
-                      interpretation: bmi.getinterpretation()
+                      interpretation: bmi.getinterpretation(),
                   );
-                },),
+                },
+                ),
               );
             },
             label: "CALCULATE BMI",),

@@ -11,8 +11,10 @@ class reusableWidget extends StatelessWidget {
         child: InkWell(
           onTap: onpressed ,
           child: Container(
+            width: double.infinity,
             height: double.infinity,
-            margin: EdgeInsets.all(15),
+            child: child,
+            margin:EdgeInsets.all(15) ,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               color: color,
