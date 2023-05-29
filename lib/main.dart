@@ -41,7 +41,7 @@ class first extends StatelessWidget {
               onPressed: (){
                Navigator.push(context, MaterialPageRoute(builder: (context)=> about(),));
               },
-              child: reuse(label: "ABOUT US"),
+              child: reuse(label: "ABOUT Us"),
             ),
             TextButton(
               onPressed: (){
